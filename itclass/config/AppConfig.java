@@ -8,6 +8,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @EnableWebMvc
 @ComponentScan(basePackages = "by.itclass.controllers")
+// Из этого класса создасться конфиг и вернет View Resolver
 public class AppConfig {
     @Bean
     public ViewResolver viewResolverJsp(){
@@ -16,5 +17,6 @@ public class AppConfig {
         resolver.setSuffix(".jsp");
         return resolver;
     }
+
 }
 
