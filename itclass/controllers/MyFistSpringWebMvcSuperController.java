@@ -11,20 +11,20 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MyFistSpringWebMvcSuperController {
+
     @GetMapping(value = "/")
     public String viewIndex() {
         return "index";
     }
 
-    ;
-
-    @GetMapping(value = "/oldApproach")
+    @GetMapping(value = "/oldApproach") //адрес
     public String passParamOldApproach(HttpServletRequest req) {
         var stringParam = req.getParameter("param1");
         var intParam = Integer.parseInt(req.getParameter("param2"));
         req.setAttribute("strPar", stringParam);
         req.setAttribute("intPar", intParam);
         return "main";
+        // http://localhost:8080/oldApproach?param1=gdg&param2=123
     }
 
     @GetMapping(value = "/springApproach")
